@@ -1,0 +1,12 @@
+Empezar con webpack:
+
+    Webpack funciona como un empaquetador, regularizando nuestros archivos para que estos se encuentren listos para entrar en produccion. 
+    Para empezar a usar webpack siempre debemos iniciarlo en modo produccion para generar nuestra carpeta DIST. Luego lo empezaremos a mandar a modo "DEV"
+    así webpack leerá nuestro archivo index.js ubicado en la carpeta src y lo empaquetará para su uso en produccion.
+
+    Para su configuración debemos crear el archivo "webpack.config.js"
+
+    Loader:
+
+    Se encargan de transformar tu codigo para que webpack y el navegador lo entienda. Se trata de un pre procesador que importa tu codigo y lo transforma.
+    Para configurar un loader en nuestro archivo webpack necesitamos crear un modulo con sus respectivas reglas
