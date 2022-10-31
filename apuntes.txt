@@ -35,3 +35,7 @@ Empezar con webpack:
             }
         ]
     }
+
+    CSS:
+
+    Webpack es incapaz de leer css, al momento de compilar nuestro css nos arrojará un error ¿Como solucionamos esto? A través de un loader que nos permita trabajar css. En este caso necesitmaos dos loaders para que pueda entender nuestro archivo, style loader y css loader. Recordar que los loaders van de izquierda a derecha según la prioridad que necesitemos. Recuerda siempre instalar en la terminal los loaders que ocupemos!

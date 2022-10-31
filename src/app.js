@@ -1,3 +1,6 @@
-const App = () => <h1> Hello Yarod!!</h1>
+const App = () => 
+<div className='container'>
+<h1> Hello Yarod!!</h1>
+</div>
 
 export default App
