@@ -50,4 +50,8 @@ Empezar con webpack:
 
     Webpack-Server:
 
-    Nos ayuda a que las compilaciones del modo dev sean mucho más rapidas, es decir, al momento de hacer un cambio en modo server el mismo se hará de forma automatica y lo veremos reflejado en nuestr app
+    Nos ayuda a que las compilaciones del modo dev sean mucho más rapidas, es decir, al momento de hacer un cambio en modo server el mismo se hará de forma automatica y lo veremos reflejado en nuestr app.
+
+    Webpack como funcion:
+
+    Es bueno dejar nuestro objeto module export como una funcion, así evitamos tener dos archivos webpack para desarrollo y produccion y no repetir codigo, para cualquier duda solo sigue la estructura del archivo webpack de este curso

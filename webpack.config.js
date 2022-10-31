@@ -14,20 +14,26 @@ const rulesJavaScript = {
 
 const rules = [ rulesJavaScript, rulesCSS ];
 
-module.exports = { //Para empezar nuestra configuracion debemos tener un module.exports
-    entry: './src/index.js',
-    output: { //Nuestro output será la carpeta que cree webpack para empaquetar sus archivos. Los saca desde el index y los deja en la carpeta seleccionada a través de "dirname"
-        path: path.resolve(__dirname, 'build') //Build será la carpeta creada para que webpack deje sus archivos
-    },
-    plugins: [ //Agregamos los plugin con un array ya que siempre serán más de uno
-        new HtmlWebpackPlugin( {template: 'src/index.html'}),
-    ],
-    module: { rules }, //Le asignamos las reglas al modulo para que trabaje con los loaders
-    devServer: {
-        open: true, //Nos abre el navegador
-        port: 3000,
-        client: {
-            overlay: true,
+module.exports = (env, argv) => {
+    const {mode} = argv;
+    const isProduction = mode === 'production';
+    return { //Para empezar nuestra configuracion debemos tener un module.exports
+            entry: './src/index.js',
+            output: { //Nuestro output será la carpeta que cree webpack para empaquetar sus archivos. Los saca desde el index y los deja en la carpeta seleccionada a través de "dirname"
+                filename: isProduction ? '[name].[contenthash].js' : 'main.js',
+                path: path.resolve(__dirname, 'build'), //Build será la carpeta creada para que webpack deje sus archivos
+                clean: true,
+            },
+            plugins: [ //Agregamos los plugin con un array ya que siempre serán más de uno
+                new HtmlWebpackPlugin( {template: 'src/index.html'}),
+            ],
+            module: { rules }, //Le asignamos las reglas al modulo para que trabaje con los loaders
+            devServer: {
+                open: true, //Nos abre el navegador
+                port: 3000,
+                client: {
+                    overlay: true,
+                }
+            },
         }
-    },
 }
