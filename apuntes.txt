@@ -4,9 +4,34 @@ Empezar con webpack:
     Para empezar a usar webpack siempre debemos iniciarlo en modo produccion para generar nuestra carpeta DIST. Luego lo empezaremos a mandar a modo "DEV"
     así webpack leerá nuestro archivo index.js ubicado en la carpeta src y lo empaquetará para su uso en produccion.
 
+    Debemos instalar las dependencias de webpack y de react. Las cuales no debemos memmorizar pero siempre es bueno saberlas.
+
     Para su configuración debemos crear el archivo "webpack.config.js"
 
     Loader:
 
     Se encargan de transformar tu codigo para que webpack y el navegador lo entienda. Se trata de un pre procesador que importa tu codigo y lo transforma.
-    Para configurar un loader en nuestro archivo webpack necesitamos crear un modulo con sus respectivas reglas
+    Para configurar un loader en nuestro archivo webpack necesitamos crear un modulo con sus respectivas reglas. Tambien debemos instalar las dependencias de dichos loaders, en este caso babel
+
+    React:
+
+    Actualmente, no necesitamos importar react desde react para que nuestras aplicaciones funcionen, lo que necesitamos hacer es lo siguiente en nuestro archivo de configuración webpack:
+
+        module: {
+        rules: [ //Le asignamos las reglas al modulo para que trabaje con los loaders
+            {
+                test: /\.js$/, //Le indicamos que todos los archivos con dicha extension necesitan pasar por el loader
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        [
+                        '@babel/preset-react',
+                        {
+                            runtime: 'automatic' //Clasic, con este no necesitamos importar react de react
+                        }
+                        ]
+            ] //Le damos una configuración a babel para que el mismo entienda react
+                }
+            }
+        ]
+    }
