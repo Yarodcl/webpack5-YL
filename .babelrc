@@ -1,0 +1,8 @@
+{
+    "presets": [
+        "@babel/preset-env", //Nos permite compilar todas las versiones de JS
+        ["@babel/preset-react", {
+            "runtime": "automatic" //Con esta sintaxis no tendremos que exportar React a los archivos que lo usen
+        }] //Nos ayuda con la sintaxis de REACT
+    ]
+}

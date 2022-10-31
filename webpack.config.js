@@ -2,17 +2,7 @@ const path = require('path') //Path es una dependencia nativa de node la cual no
 
 const rulesJavaScript = {
     test: /\.js$/, //Le indicamos que todos los archivos con dicha extension necesitan pasar por el loader
-    loader: 'babel-loader',
-    options: {
-        presets: [
-            [
-            '@babel/preset-react', //Le damos una configuración a babel para que el mismo entienda react
-            {
-                runtime: 'automatic' //Clasic, con este no necesitamos importar react de react
-            }
-            ]
-] 
-    }
+    loader: 'babel-loader'
 };
 
 const rules = [ rulesJavaScript ];
