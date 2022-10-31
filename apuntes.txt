@@ -38,4 +38,16 @@ Empezar con webpack:
 
     CSS:
 
-    Webpack es incapaz de leer css, al momento de compilar nuestro css nos arrojará un error ¿Como solucionamos esto? A través de un loader que nos permita trabajar css. En este caso necesitmaos dos loaders para que pueda entender nuestro archivo, style loader y css loader. Recordar que los loaders van de izquierda a derecha según la prioridad que necesitemos. Recuerda siempre instalar en la terminal los loaders que ocupemos!
+    Webpack es incapaz de leer css, al momento de compilar nuestro css nos arrojará un error ¿Como solucionamos esto? A través de un loader que nos permita trabajar css. En este caso necesitmaos dos loaders para que pueda entender nuestro archivo, style loader y css loader. Recordar que los loaders van de izquierda a derecha según la prioridad que necesitemos. Recuerda siempre instalar en la terminal los loaders que necesitamos!
+
+    Plugins:
+
+    A través de los plugins podemos tener distintas funcionalidades, en este caso podemos hacer que nos genere un html de forma automatica.
+
+    HTML:
+
+    Para generar nuestro HTML de forma automatica debemos descargar nuestro loader de HTML junto con nuestro plugin y asignarlo a nuestro archivo de configuración, luego darle el template del archivo al que queremos inyectarle. Rercordar que siempre debemos tenerlo fuera de nuestra carpeta build ya que ahí aparecerá todo lo generado
+
+    Webpack-Server:
+
+    Nos ayuda a que las compilaciones del modo dev sean mucho más rapidas, es decir, al momento de hacer un cambio en modo server el mismo se hará de forma automatica y lo veremos reflejado en nuestr app
